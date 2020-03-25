@@ -14,7 +14,7 @@ namespace Smartlog.rntest.EntityFrameworkCore
             var configuration = BuildConfiguration();
 
             var builder = new DbContextOptionsBuilder<rntestMigrationsDbContext>()
-                .UseSqlServer(configuration.GetConnectionString("Default"));
+                .UseNpgsql(configuration.GetConnectionString("Default"));
 
             return new rntestMigrationsDbContext(builder.Options);
         }
